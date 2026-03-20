@@ -20,35 +20,24 @@ redirect_from:
 ---
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Undergraduate student South China University of Technology(SCUT), Guangzhou 2025-Now
+
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* To be continued...
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Software Development (CS)
+  * Languages: Proficient in Python (Data Analysis & Automation), C/C++ (Embedded Systems).
+  * Tools & Infrastructure: Version control with Git, containerization via Docker, and proficient in Linux/Unix environments.
+* Mechanical Engineering(ME)
+  * CAD/CAE: Advanced modeling in SolidWorks and AutoCAD; skilled in parametric design.
+  * Simulation & Analysis: Finite Element Analysis (FEA) using ANSYS/Abaqus to evaluate structural integrity and thermal performance.
+  * Advanced Manufacturing: Prototyping via Additive Manufacturing (3D Printing) and familiar with CNC machining workflows.
+* Chemistry(Chem)
+  * Professional Software: Mastery of ChemDraw for molecular structures and OriginLab/MATLAB for complex curve fitting and signal processing.
 
 Publications
 ======
@@ -62,12 +51,7 @@ Talks
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* To be continued...
