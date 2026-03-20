@@ -23,9 +23,9 @@ repository               : "https://github.com/LiaoYutao1013/LiaoYutao1013.githu
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "My_Selfish.jpg"
   name             : "Liao Yutao(廖宇韬)"
-  pronouns         : "he/his" 
+  pronouns         : " " 
   bio              : "Short biography for the left-hand sidebar"
   location         : "Guanggong,China"
   employer         : "South China University of Technology"

@@ -9,6 +9,15 @@ redirect_from:
 
 {% include base_path %}
 
+## 个人简历预览
+<iframe src="{{ base_path }}/files/CV Yutao LIAO.pdf" width="100%" height="800px" frameborder="0">
+    您的浏览器不支持嵌入式 PDF，请点击下方链接下载。
+</iframe>
+
+<br>
+[点击此处下载 PDF 版本]({{ base_path }}/files/CV Yutao LIAO.pdf)
+
+---
 Education
 ======
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
