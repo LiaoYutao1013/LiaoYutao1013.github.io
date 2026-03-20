@@ -51,7 +51,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "LiaoYutao1013" # Username - Update with your username on the site
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
@@ -71,7 +71,7 @@ author:
   medium           : # URL
   pinterest        : # Username
   soundcloud       : # Username
-  steam            : # Username
+  steam            : https://steamcommunity.com/profiles/76561198788893041/
   telegram         : # URL
   tumblr           : # Username
   twitter          : # Username for X / Twitter
@@ -80,7 +80,7 @@ author:
   wikipedia        : # Username
   xing             : # Username
   youtube          : # Username
-  zhihu            : # Username
+  zhihu            : https://www.zhihu.com/people/la-vaguelette-6
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
