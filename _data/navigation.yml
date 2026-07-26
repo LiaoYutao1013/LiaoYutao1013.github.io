@@ -14,6 +14,9 @@ main:
   - title: "Talks"
     url: /talks/    
 
+  - title: "Blog"
+    url: /blog/
+
   - title: "Projects"
     url: /portfolio/
 

@@ -1,0 +1,123 @@
+/* ==========================================================================
+   PROJECTS
+   ========================================================================== */
+
+.projects__intro {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--global-border-color);
+
+  p {
+    margin: 0;
+  }
+}
+
+.projects__profile-link {
+  flex: 0 0 auto;
+  font-size: $type-size-6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  display: flex;
+  min-height: 210px;
+  flex-direction: column;
+  padding: 1.25rem;
+  border: 1px solid var(--global-border-color);
+  border-radius: 6px;
+  background: var(--global-bg-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: #54aeff;
+    box-shadow: 0 3px 10px rgba(9, 105, 218, 0.12);
+  }
+}
+
+.project-card__title {
+  margin: 0;
+  font-size: $type-size-5;
+  font-weight: 600;
+
+  i {
+    margin-right: 0.35rem;
+    color: #57606a;
+    font-size: 0.9em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.project-card__description {
+  margin: 0.9rem 0 1rem;
+  color: var(--global-text-color);
+  font-size: $type-size-6;
+  line-height: 1.55;
+}
+
+.project-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  color: var(--global-text-color-light);
+  font-size: $type-size-7;
+}
+
+.project-card__language {
+  display: inline-flex;
+  align-items: center;
+}
+
+.project-card__language-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.35rem;
+  border-radius: 50%;
+}
+
+.project-card__link {
+  margin-top: 1.1rem;
+  color: var(--global-link-color);
+  font-size: $type-size-6;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--global-link-color-hover);
+    text-decoration: underline;
+  }
+}
+
+.blog__intro {
+  margin-bottom: 1.5rem;
+  color: var(--global-text-color-light);
+}
+
+.blog__empty {
+  padding: 1.25rem;
+  border: 1px solid var(--global-border-color);
+  border-radius: 6px;
+  background: var(--global-thead-color);
+  color: var(--global-text-color-light);
+}
+
+@media screen and (max-width: 600px) {
+  .projects__intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

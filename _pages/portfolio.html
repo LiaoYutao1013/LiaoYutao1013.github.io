@@ -5,12 +5,24 @@ permalink: /portfolio/
 author_profile: true
 ---
 
-I am preparing selected engineering and software projects for publication. Each project will include its context, my contribution, methods, and outcomes.
+<div class="projects__intro">
+  <p>Selected public repositories spanning engineering software, autonomous systems, robotics, and interactive applications.</p>
+  <a class="projects__profile-link" href="https://github.com/LiaoYutao1013" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View all repositories</a>
+</div>
 
-{% if site.portfolio.size > 0 %}
-  {% include base_path %}
-  {% for post in site.portfolio %}
-    {% include archive-single.html %}
+<div class="projects__grid">
+  {% for project in site.data.projects %}
+    <article class="project-card">
+      <div class="project-card__main">
+        <h2 class="project-card__title"><i class="fa fa-book" aria-hidden="true"></i> <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a></h2>
+        <p class="project-card__description">{{ project.description }}</p>
+      </div>
+      <div class="project-card__meta">
+        <span class="project-card__language"><span class="project-card__language-dot" style="background-color: {{ project.language_color }}"></span>{{ project.language }}</span>
+        {% if project.topics %}<span>{{ project.topics }}</span>{% endif %}
+      </div>
+      <a class="project-card__link" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">&rarr;</span></a>
+    </article>
   {% endfor %}
-{% endif %}
+</div>
 
