@@ -1,30 +1,32 @@
 ---
-
-# 👨‍🔬 About Me
-
-I am a 1-year Undergraduate student at **South China University of technology(SCUT)**, expected majoring in mechanical engineering. My research is supervised by Prof. Zhao Rongchao. 
-
-> 💡 **Research Vision:** "To bridge the gap between Theory and Practice through innovative Methodology."
-
+layout: single
+title: "About"
+permalink: /
+author_profile: true
 ---
 
-## 🔥 News
+I am an undergraduate student at **South China University of Technology (SCUT)** in Guangzhou, China. I am building foundations in mechanical engineering while exploring how artificial intelligence can support engineering research and manufacturing.
 
----
+## Research Interests
 
-## 🎓 Education
-* **South China University of technology** | 2025 - Present  
-  *Undergraduate in Engineering Experimental Class(Academician Special Class)*
+- Precision manufacturing and micro-assembly systems
+- Intelligent manufacturing and robotics
+- Computational engineering and data-driven methods
 
----
+## Education
 
-## 💻 Projects
-*Since I am currently focusing on core research, my major publications are in progress. 
----
+**South China University of Technology** | 2025 - Present<br>
+Undergraduate, Engineering Experimental Class
 
----
+## Current Focus
 
-## 📧 Contact
-* **Address:** [No. 382, East Outer Ring Road, Guangzhou University Town, Panyu District, Guangzhou], [SCUT], [Guangdong], [China]
-* **Email:** [bcliaoyutao@mail.scut.edu.cn]
-* **Socials:** [GitHub](https://github.com/LiaoYutao1013)
+I am currently developing my academic and technical portfolio. Selected engineering and software projects will be published here as they are completed.
+
+## Academic Activities
+
+Recent seminar notes and technical discussions are available on the [Talks page]({{ '/talks/' | relative_url }}).
+
+## Contact
+
+- Email: [bcliaoyutao@mail.scut.edu.cn](mailto:bcliaoyutao@mail.scut.edu.cn)
+- GitHub: [LiaoYutao1013](https://github.com/LiaoYutao1013)

@@ -5,8 +5,11 @@ permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
+Teaching materials will be added when available.
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+{% if site.teaching.size > 0 %}
+  {% include base_path %}
+  {% for post in site.teaching reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
