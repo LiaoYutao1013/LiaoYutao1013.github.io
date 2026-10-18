@@ -1,109 +1,15 @@
 ---
 layout: default
 ---
-
-{% include base_path %}
-
-{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
-  {% include page__hero.html %}
-{% endif %}
-
-{% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
-{% endif %}
-
-<div id="main" role="main">
-  {% include sidebar.html %}
-
-  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
-    {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
-
-    <div class="page__inner-wrap">
-      {% unless page.header.overlay_color or page.header.overlay_image %}
-        <header>
-          {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
-          {% if page.read_time %}
-            <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-          {% endif %}
-        {% if page.modified %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
-        {% endif %}
-        
-        {% if page.collection == 'teaching' %}
-          <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif page.venue and page.date %}
-          <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif page.date %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-        {% endif %}    
-        </header>
-      {% endunless %}
-
-      <section class="page__content" itemprop="text">
-        {{ content }}
-
-        {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.paperurl and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.citation and page.paperurl and page.bibtexurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.paperurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a></p>
-        {% elsif page.citation and page.slidesurl and page.bibtexurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.slidesurl and page.bibtexurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.paperurl and page.bibtexurl %}
-          <p style="font-size: smaller"><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.bibtexurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
-        {% elsif page.slidesurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.bibtexurl %}
-          <p style="font-size: smaller"><a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% endif %}
-
-        {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
-      </section>
-
-      <footer class="page__meta">
-        {% if site.data.ui-text[site.locale].meta_label %}
-          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
-        {% endif %}
-        {% include page__taxonomy.html %}
-      </footer>
-
-      {% if page.share %}{% include social-share.html %}{% endif %}
-
-      {% include post_pagination.html %}
-    </div>
-
-    {% if site.comments.provider and page.comments %}
-      {% include comments.html %}
-    {% endif %}
-  </article>
-
-  {% comment %}<!-- only show related on a post page when not disabled -->{% endcomment %}
-  {% if page.id and page.related and site.related_posts.size > 0 %}
-    <div class="page__related">
-      {% if site.data.ui-text[site.locale].related_label %}
-        <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h4>
-      {% endif %}
-      <div class="grid__wrapper">
-        {% for post in site.related_posts limit:4 %}
-          {% include archive-single.html type="grid" %}
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
-</div>
+<main id="main" class="article-layout container">
+<a href="{% if page.collection == 'posts' %}{{ '/blog/' | relative_url }}{% elsif page.collection == 'learning' %}{{ '/learning/' | relative_url }}{% elsif page.collection == 'talks' %}{{ '/talks/' | relative_url }}{% elsif page.collection == 'experiences' %}{{ '/experience/' | relative_url }}{% elsif page.collection == 'updates' %}{{ '/updates/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" class="text-link">{% include ui/icon.html name='arrow' class='reverse' %} 返回列表</a>
+<article itemscope itemtype="https://schema.org/Article">
+<div class="article-topline">{% if page.collection %}<span class="tag {% if page.collection == 'talks' or page.collection == 'experiences' %}research{% else %}study{% endif %}">{% if page.collection == 'talks' %}学术笔记{% elsif page.collection == 'posts' %}博客{% elsif page.collection == 'learning' %}学习记录{% elsif page.collection == 'updates' %}最新动态{% elsif page.collection == 'experiences' %}学术与竞赛{% elsif page.collection == 'publications' %}学术成果{% elsif page.collection == 'teaching' %}教学{% elsif page.collection == 'portfolio' %}项目{% endif %}</span>{% endif %}{% if page.date %}<time class="mono" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: '%Y.%m.%d' }}</time>{% endif %}{% if page.venue %}<span>{{ page.venue | escape }}</span>{% endif %}</div>
+<h1 class="article-title" itemprop="headline">{{ page.display_title | default: page.title | escape }}</h1>
+{% if page.description %}<p class="article-deck" itemprop="description">{{ page.description | escape }}</p>{% endif %}
+<div class="article-author"><span class="avatar">LY</span><div itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{{ site.name }}</span><small>{% if page.type %}{{ page.type | escape }}{% else %}学习、思考与构建的记录{% endif %}</small></div><span class="article-author-line"></span>{% include ui/icon.html name='book' %}</div>
+<div class="article-columns"><div class="article-body" itemprop="articleBody">{{ content }}{% if page.paperurl or page.slidesurl or page.bibtexurl %}<div class="article-resources">{% if page.paperurl %}<a href="{{ page.paperurl }}">论文全文 ↗</a>{% endif %}{% if page.slidesurl %}<a href="{{ page.slidesurl }}">演示文稿 ↗</a>{% endif %}{% if page.bibtexurl %}<a href="{{ page.bibtexurl }}">BibTeX ↗</a>{% endif %}</div>{% endif %}{% if page.citation %}<blockquote>{{ page.citation }}</blockquote>{% endif %}{% if page.tags.size > 0 %}<div class="article-tags">{% for tag in page.tags %}<span class="tag study">{{ tag | escape }}</span>{% endfor %}</div>{% endif %}</div><aside class="article-toc" aria-label="文章目录" hidden><span class="eyebrow">ON THIS PAGE</span><nav id="article-toc-links"></nav><div>{% include ui/icon.html name='file' %}<p>严谨记录<br><span>保持问题意识</span></p></div></aside></div>
+</article>
+{% if page.comments %}{% include ui/comments.html %}{% endif %}
+{% if page.previous or page.next %}<nav class="post-navigation" aria-label="相邻文章">{% if page.previous %}<a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title | escape }}</a>{% endif %}{% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title | escape }} →</a>{% endif %}</nav>{% endif %}
+</main>

@@ -1,0 +1,13 @@
+{% include ui/activity.html %}
+{% if include.limit %}{% assign activity_list = visible_activity | slice: 0, include.limit %}{% else %}{% assign activity_list = visible_activity %}{% endif %}
+{% if activity_list.size > 0 %}<div class="updates-list">
+{% for entry in activity_list %}
+  {% assign activity_type = entry.activity_type | default: entry.collection %}
+  {% assign tag_class = 'blog' %}{% assign tag_label = '博客' %}
+  {% case activity_type %}
+    {% when 'talks', 'experiences', 'research', '科研' %}{% assign tag_class = 'research' %}{% assign tag_label = '学术' %}
+    {% when 'learning', '学习' %}{% assign tag_class = 'study' %}{% assign tag_label = '学习' %}
+    {% when 'competition', '竞赛' %}{% assign tag_class = 'competition' %}{% assign tag_label = '竞赛' %}
+  {% endcase %}
+  <article class="update{% if forloop.first %} latest{% endif %}"><time datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: '%Y.%m.%d' }}</time><span class="tag {{ tag_class }}">{{ tag_label }}</span><a href="{{ entry.url | relative_url }}">{{ entry.display_title | default: entry.title | escape }}{% include ui/icon.html name='up-right' %}</a>{% if entry.venue %}<span class="update-note">讲座笔记</span>{% endif %}</article>
+{% endfor %}</div>{% else %}<div class="empty-panel glass"><h3>新的记录，正在路上。</h3><p>学习、研究与构建的进展，会在这里汇集。</p></div>{% endif %}

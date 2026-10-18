@@ -1,0 +1,16 @@
+<header class="site-header" id="site-header"><div class="nav-inner">
+  <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="{{ site.name | escape }} 首页"><span class="monogram">LY<span>.</span></span><span class="wordmark-name">LIAO YUTAO<small>ENGINEERING & INTELLIGENCE</small></span></a>
+  <nav class="desktop-nav" aria-label="主导航">
+    {% for item in site.data.navigation.main %}
+      {% assign is_active = false %}
+      {% if page.url == item.url %}{% assign is_active = true %}{% endif %}
+      {% if item.url == '/blog/' and page.collection == 'posts' %}{% assign is_active = true %}{% endif %}
+      {% if item.url == '/updates/' and page.collection == 'learning' or item.url == '/updates/' and page.collection == 'updates' %}{% assign is_active = true %}{% endif %}
+      {% if item.url == '/experience/' and page.collection == 'talks' or item.url == '/experience/' and page.collection == 'experiences' %}{% assign is_active = true %}{% endif %}
+      <a href="{{ item.url | relative_url }}"{% if is_active %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+    {% endfor %}
+  </nav>
+  <div class="nav-tools"><button class="icon-button search-reserved" aria-label="搜索（即将开放）" title="搜索 · 即将开放" disabled>{% include ui/icon.html name='search' %}</button><span class="tool-separator" aria-hidden="true"></span><button class="icon-button theme-toggle" aria-label="切换明暗模式" hidden>{% include ui/icon.html name='moon' %}</button><button class="icon-button menu-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu" hidden>{% include ui/icon.html name='menu' %}</button></div>
+</div></header>
+<nav class="mobile-menu" id="mobile-menu" aria-label="移动端导航" hidden><p class="eyebrow">EXPLORE / LIAO YUTAO</p>{% for item in site.data.navigation.main %}<a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }} <span>0{{ forloop.index }}</span></a>{% endfor %}<p>South China University of Technology<br>Guangzhou, China</p></nav>
+<noscript><nav class="no-script-nav" aria-label="主导航">{% for item in site.data.navigation.main %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endfor %}</nav></noscript>

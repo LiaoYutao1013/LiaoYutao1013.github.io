@@ -1,0 +1,10 @@
+---
+layout: archive
+title: "让学习留下轨迹"
+permalink: /learning/
+eyebrow: "A LITTLE, EVERY DAY"
+description: "每一次理解，都向前一步。"
+---
+{% include ui/calendar.html %}
+{% assign learning_list = site.learning | where_exp: 'entry', 'entry.date <= site.time' | sort: 'date' | reverse %}
+{% if learning_list.size > 0 %}<div class="learning-archive">{% for entry in learning_list %}<article class="archive-note"><time datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: '%Y.%m.%d %H:%M' }}</time><h2><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h2><p>{{ entry.description | default: entry.excerpt | strip_html | escape }}</p></article>{% endfor %}</div>{% else %}<p class="section-footnote">学习笔记将在这里逐步积累。也可以先阅读已有的<a href="{{ '/talks/' | relative_url }}">学术讲座记录</a>。</p>{% endif %}

@@ -1,16 +1,9 @@
 ---
 layout: archive
-title: "Talks and presentations"
+title: "学术笔记"
+eyebrow: "ACADEMIC NOTES"
+description: "记录参与的讲座、技术研讨与学习收获。"
 permalink: /talks/
-author_profile: true
 ---
-
-{% if site.talkmap_link == true %}
-
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
-
-{% endif %}
-
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+{% assign talk_list = site.talks | sort: 'date' | reverse %}
+<div class="experience-list">{% for entry in talk_list %}<a class="experience-card" href="{{ entry.url | relative_url }}"><div class="experience-year">{{ entry.date | date: '%Y' }}<small>{{ entry.date | date: '%m.%d' }}</small></div><div class="experience-content"><h3>{{ entry.display_title | default: entry.title | escape }}</h3><p>{{ entry.type | escape }} · {{ entry.venue | escape }}</p></div><span class="tag research">学术</span>{% include ui/icon.html name='up-right' class='experience-arrow' %}</a>{% endfor %}</div>

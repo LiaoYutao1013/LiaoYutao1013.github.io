@@ -1,27 +1,11 @@
 ---
 layout: archive
 permalink: /blog/
-title: "Blog"
-author_profile: true
+title: "思考与记录"
+eyebrow: "IDEAS INTO WORDS"
+description: "工程实践、阅读笔记与学习心得。把问题想清楚，也把过程记录下来。"
 redirect_from:
   - /year-archive/
   - /wordpress/blog-posts/
 ---
-
-{% include base_path %}
-
-<p class="blog__intro">Notes on learning, engineering experiments, and everyday observations.</p>
-
-{% if site.posts.size > 0 %}
-  {% capture written_year %}'None'{% endcapture %}
-  {% for post in site.posts %}
-    {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-    {% if year != written_year %}
-      <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
-      {% capture written_year %}{{ year }}{% endcapture %}
-    {% endif %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% else %}
-  <p class="blog__empty">The first post is on its way.</p>
-{% endif %}
+{% include ui/blog-cards.html %}

@@ -1,0 +1,14 @@
+eyebrow: "ENGINEERING × INTELLIGENCE"
+affiliation: "华南理工大学"
+role: "工科试验班本科生"
+tagline: "探索精密尺度，连接智能未来。"
+description: "在机械工程与人工智能的交汇处，持续学习、构建与记录。"
+background: "/images/My_Selfish.jpg"
+cv: "/files/CV Yutao LIAO.pdf"
+interests:
+  - 精密制造
+  - 智能制造
+  - 机器人与 ROS 2
+about: "我是 Liao Yutao，华南理工大学本科生，关注精密制造、机器人，以及数据驱动的工程方法。"
+repository: "LiaoYutao1013/LiaoYutao1013.github.io"
+branch: "master"

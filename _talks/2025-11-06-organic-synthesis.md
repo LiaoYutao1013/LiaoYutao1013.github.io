@@ -1,5 +1,7 @@
 ---
 title: "The molecules that changed the world"
+display_title: "改变世界的分子：不对称催化与绿色化学"
+description: "从有机合成到自动化实验室，记录关于合成方法与可持续化学的学习与讨论。"
 collection: talks
 type: "Seminar Presentation & Discussion"
 permalink: /talks/2025-11-06-talk-1

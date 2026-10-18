@@ -1,28 +1,9 @@
 ---
 layout: archive
-title: "Projects"
+title: "工程与开源项目"
+eyebrow: "LEARNING BY BUILDING"
+description: "用代码与工程实践，验证想法。"
 permalink: /portfolio/
-author_profile: true
 ---
-
-<div class="projects__intro">
-  <p>Selected public repositories spanning engineering software, autonomous systems, robotics, and interactive applications.</p>
-  <a class="projects__profile-link" href="https://github.com/LiaoYutao1013" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View all repositories</a>
-</div>
-
-<div class="projects__grid">
-  {% for project in site.data.projects %}
-    <article class="project-card">
-      <div class="project-card__main">
-        <h2 class="project-card__title"><i class="fa fa-book" aria-hidden="true"></i> <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a></h2>
-        <p class="project-card__description">{{ project.description }}</p>
-      </div>
-      <div class="project-card__meta">
-        <span class="project-card__language"><span class="project-card__language-dot" style="background-color: {{ project.language_color }}"></span>{{ project.language }}</span>
-        {% if project.topics %}<span>{{ project.topics }}</span>{% endif %}
-      </div>
-      <a class="project-card__link" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">&rarr;</span></a>
-    </article>
-  {% endfor %}
-</div>
+<div class="project-grid">{% for project in site.data.projects %}<article class="blog-card"><div class="blog-card-top"><span class="category">{{ project.topics | escape }}</span><span class="tag study">{{ project.language | escape }}</span></div><h2><a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.display_title | default: project.name | escape }}</a></h2><p class="project-description">{{ project.summary | default: project.description | escape }}</p><div class="blog-card-footer"><span>{{ project.language | escape }}</span><a class="text-link" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">查看项目 {% include ui/icon.html name='up-right' %}</a></div></article>{% endfor %}</div>
 

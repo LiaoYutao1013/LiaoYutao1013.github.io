@@ -13,7 +13,7 @@ title                    : "Liao Yutao"
 title_separator          : "-"
 name                     : &name "Liao Yutao"
 description              : &description "Academic portfolio of Liao Yutao, an undergraduate student at South China University of Technology."
-url                      : https://liaoyutao1013.github.io/ # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
+url                      : https://liaoyutao1013.github.io # The base hostname & protocol for your site
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "https://github.com/LiaoYutao1013/LiaoYutao1013.github.io"
@@ -95,11 +95,17 @@ publication_category:
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
-future                   : true
+future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  # Enable Giscus only after configuring the real repository/category IDs.
+  giscus:
+    repo: "LiaoYutao1013/LiaoYutao1013.github.io"
+    repo_id:
+    category: "General"
+    category_id:
   disqus:
     shortname            :
   discourse:
@@ -191,6 +197,8 @@ exclude:
   - Rakefile
   - README
   - tmp
+  - scripts
+  - docs
   - vendor
 keep_files:
   - .git
@@ -221,6 +229,15 @@ kramdown:
 
 # These settings control the types of collections used by the template
 collections:
+  learning:
+    output: true
+    permalink: /learning/:path/
+  updates:
+    output: true
+    permalink: /updates/:path/
+  experiences:
+    output: true
+    permalink: /experience/:path/
   teaching:
     output: true
     permalink: /:collection/:path/
@@ -237,6 +254,22 @@ collections:
 
 # These settings control how pages and collections are included in the site
 defaults:
+  - scope:
+      path: ""
+      type: learning
+    values:
+      layout: single
+      comments: true
+  - scope:
+      path: ""
+      type: updates
+    values:
+      layout: single
+  - scope:
+      path: ""
+      type: experiences
+    values:
+      layout: single
   # _posts
   - scope:
       path: ""
@@ -290,6 +323,7 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+      comments: true
 
 
 # Sass/SCSS
@@ -302,7 +336,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Shanghai
 
 
 # Plugins

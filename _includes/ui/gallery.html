@@ -1,0 +1,5 @@
+<div class="photo-grid">
+{% for photo in site.data.gallery %}<figure class="photo-card"><div class="photo-visual real-photo"><img src="{{ photo.image | relative_url }}" alt="{{ photo.alt | escape }}" loading="lazy" width="800" height="600">{% if photo.category %}<span class="photo-chip">{{ photo.category | escape }}</span>{% endif %}</div><figcaption><span>{{ photo.title | escape }}</span>{% if photo.date %}<small>{{ photo.date | date: '%Y.%m' }}</small>{% endif %}</figcaption></figure>{% endfor %}
+{% if site.data.gallery.size < 3 %}<figure class="photo-card placeholder-photo"><div class="photo-visual"><div class="photo-placeholder-lines"></div>{% include ui/icon.html name='image' %}<span>实验室的日常</span><small>等待下一次记录</small></div><figcaption><span>在探索中，积累答案</span></figcaption></figure>{% endif %}
+{% if site.data.gallery.size < 2 %}<figure class="photo-card placeholder-photo"><div class="photo-visual travel-placeholder"><div class="photo-placeholder-lines"></div>{% include ui/icon.html name='pin' %}<span>下一段旅程</span><small>等待下一次记录</small></div><figcaption><span>让好奇心，带路</span></figcaption></figure>{% endif %}
+</div>

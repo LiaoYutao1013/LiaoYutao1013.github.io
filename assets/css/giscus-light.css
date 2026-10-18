@@ -1,0 +1,5 @@
+@import url('https://giscus.app/themes/light.css');
+main{--color-canvas-default:transparent;--color-canvas-subtle:rgba(244,247,252,.7);--color-fg-default:#0f172a;--color-fg-muted:#64748b;--color-accent-fg:#1e6fd9;--color-btn-primary-bg:#0b3d91;--color-btn-primary-hover-bg:#1e6fd9;--color-btn-primary-border:transparent;--color-border-default:#dbe6f5;font-family:Inter,"Microsoft YaHei",system-ui,sans-serif}
+.gsc-comment-box-textarea,.gsc-comment-content{border-radius:16px;background:rgba(255,255,255,.72);backdrop-filter:blur(12px)}
+.gsc-comment-box-textarea:focus{border-color:#1e6fd9;box-shadow:0 0 0 3px rgba(30,111,217,.12)}
+.gsc-comment-author-avatar{border-radius:50%}.gsc-comment-box-buttons button{border-radius:8px}

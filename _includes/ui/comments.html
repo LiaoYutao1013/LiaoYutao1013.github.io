@@ -1,0 +1,12 @@
+<section class="comments glass" id="comments" aria-labelledby="comments-title">
+  <div class="comments-heading"><div><p class="eyebrow">CONTINUE THE CONVERSATION</p><h2 id="comments-title">交流与讨论</h2></div>{% if site.management.session_endpoint %}<a class="admin-entry" href="{{ '/admin/' | relative_url }}" data-session-endpoint="{{ site.management.session_endpoint | relative_url }}" hidden>管理入口 {% include ui/icon.html name='up-right' %}</a>{% endif %}</div>
+  {% if site.comments.provider == 'giscus' and site.comments.giscus.repo_id and site.comments.giscus.category_id %}
+    <div class="giscus" data-giscus-theme-light="{{ '/assets/css/giscus-light.css' | absolute_url }}" data-giscus-theme-dark="{{ '/assets/css/giscus-dark.css' | absolute_url }}"></div>
+    <script src="https://giscus.app/client.js" data-repo="{{ site.comments.giscus.repo | escape }}" data-repo-id="{{ site.comments.giscus.repo_id | escape }}" data-category="{{ site.comments.giscus.category | escape }}" data-category-id="{{ site.comments.giscus.category_id | escape }}" data-mapping="pathname" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="{{ '/assets/css/giscus-light.css' | absolute_url }}" data-lang="zh-CN" crossorigin="anonymous" async></script>
+  {% elsif site.comments.provider and site.comments.provider != 'giscus' %}
+    {% include comments.html %}
+  {% else %}
+    <p class="comment-preview-note">评论暂未开放，欢迎通过邮件交流你的问题与想法。</p>
+    <div class="comment-compose"><span class="avatar" aria-hidden="true">?</span><div><label class="sr-only" for="comment-unavailable">评论暂未开放</label><textarea id="comment-unavailable" placeholder="评论功能即将开放，期待你的思考……" rows="3" disabled></textarea><div class="comment-actions"><span>期待有价值的交流</span><a class="primary-button" href="mailto:{{ site.author.email }}">邮件交流 {% include ui/icon.html name='mail' %}</a></div></div></div>
+  {% endif %}
+</section>

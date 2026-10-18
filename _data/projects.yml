@@ -1,4 +1,6 @@
 - name: "GenshinDMG_Calc"
+  display_title: "MATLAB 数值建模与可视化"
+  summary: "围绕参数变化、方案优化和情景比较，练习数值建模与可视化。"
   description: "MATLAB-based damage modeling and visualization suite with stat-scaling analysis, build optimization, and scenario comparison."
   url: "https://github.com/LiaoYutao1013/GenshinDMG_Calc"
   language: "MATLAB"
@@ -6,6 +8,8 @@
   topics: "Data visualization"
 
 - name: "26_wuren_LiaoYutao"
+  display_title: "无人系统学习与工程基础"
+  summary: "围绕 Linux、CMake、机器学习和 ROS 2，积累无人系统工程基础。"
   description: "SCUT Racing learning repository covering Linux, CMake, machine learning, deep learning, and ROS 2 exercises."
   url: "https://github.com/LiaoYutao1013/26_wuren_LiaoYutao"
   language: "Jupyter Notebook"
@@ -13,6 +17,9 @@
   topics: "Autonomous systems"
 
 - name: "26wurenLiaoYutao_teamwork"
+  display_title: "ROS 2 / Gazebo 无人驾驶仿真"
+  summary: "围绕锥桶感知、建图定位与直角赛道控制，构建无人驾驶仿真链路。"
+  featured: true
   description: "ROS 2 and Gazebo autonomous-driving simulation for cone perception, mapping, localization, and right-angle track control."
   url: "https://github.com/LiaoYutao1013/26wurenLiaoYutao_teamwork"
   language: "Python"
@@ -20,6 +27,9 @@
   topics: "ROS 2 and Gazebo"
 
 - name: "MyDroid_Innefa"
+  display_title: "视觉跟随机器人 · MyDroid_Innefa"
+  summary: "连接 STM32 固件与 ROS 2 控制链路，探索感知、跟随和遥控。"
+  featured: true
   description: "Visual-following vehicle that connects STM32 firmware with a ROS 2 control stack for perception, tracking, and teleoperation."
   url: "https://github.com/LiaoYutao1013/MyDroid_Innefa"
   language: "Python"
@@ -27,6 +37,8 @@
   topics: "Embedded robotics"
 
 - name: "Furina_Desktop"
+  display_title: "交互式桌面应用 · Furina_Desktop"
+  summary: "使用 React、TypeScript 与 Electron 构建可交互的桌面应用。"
   description: "Electron desktop companion built with React and TypeScript, Live2D interaction, LLM chat, speech synthesis, and local settings."
   url: "https://github.com/LiaoYutao1013/Furina_Desktop"
   language: "TypeScript"
@@ -34,6 +46,8 @@
   topics: "Desktop application"
 
 - name: "Stepper-Motor-Gimbal_Demo"
+  display_title: "步进电机云台控制实验"
+  summary: "通过 Python 小型实验，探索步进电机与云台运动控制。"
   description: "A compact Python demo repository for experimenting with stepper-motor gimbal control."
   url: "https://github.com/LiaoYutao1013/Stepper-Motor-Gimbal_Demo"
   language: "Python"

@@ -1,4 +1,7 @@
 # Academic Pages
+
+This site now uses a blue academic identity with a narrative homepage, learning calendar, unified article pages, and a static writing workspace at `/admin/`. See [the content guide](docs/content-guide.md) for authoring, photos, comments, and local validation. The original Academic Pages foundation remains below.
+
 **Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
 
 ![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")

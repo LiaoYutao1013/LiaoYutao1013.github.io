@@ -1,0 +1,39 @@
+name: Check Jekyll site
+
+on:
+  push:
+    paths:
+      - '_config.yml'
+      - '_data/**'
+      - '_includes/**'
+      - '_layouts/**'
+      - '_pages/**'
+      - '_posts/**'
+      - '_talks/**'
+      - '_learning/**'
+      - '_updates/**'
+      - '_experiences/**'
+      - 'assets/**'
+      - 'Gemfile'
+      - 'scripts/check-site.mjs'
+      - '.github/workflows/check-site.yml'
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: bundle exec jekyll build --strict_front_matter
+      - run: node --check assets/js/identity.js
+      - run: node scripts/check-site.mjs

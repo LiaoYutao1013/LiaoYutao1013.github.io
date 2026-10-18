@@ -1,17 +1,9 @@
 ---
 layout: archive
-title: "CV"
+title: "结构化简历"
 permalink: /cv-json/
-author_profile: false
 redirect_from:
   - /resume-json
 ---
-
-{% include base_path %}
-
 {% include cv-template.html %}
-
-<div class="cv-download-links">
-  <a href="{{ base_path }}/files/cv.pdf" class="btn btn--primary">Download CV as PDF</a>
-  <a href="{{ base_path }}" class="btn btn--inverse">View Markdown CV</a>
-</div>
+<p><a class="text-link" href="{{ site.data.identity.cv | relative_url | replace: ' ', '%20' }}">下载简历 PDF ↗</a> · <a class="text-link" href="{{ '/cv/' | relative_url }}">完整简历 →</a></p>

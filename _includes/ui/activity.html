@@ -1,0 +1,2 @@
+{% assign all_activity = site.posts | concat: site.talks | concat: site.learning | concat: site.updates | concat: site.experiences | sort: 'date' | reverse %}
+{% assign visible_activity = all_activity | where_exp: 'entry', 'entry.date <= site.time' %}
