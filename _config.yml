@@ -23,14 +23,14 @@ repository               : "https://github.com/LiaoYutao1013/LiaoYutao1013.githu
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "My_Selfish.jpg"
+  avatar           : "16bfb3574c71af70051c4d31d3b2935b.jpg"
   name             : "Liao Yutao"
-  pronouns         :
-  bio              : "Undergraduate student at South China University of Technology, interested in mechanical engineering and intelligent manufacturing."
+  pronouns         : he/him
+  bio              : "Undergraduate student at South China University of Technology, interested in mechanical engineering.Now is a menber of Formax,a team dedicating for FSAC/FSAE."
   location         : "Guangdong, China"
   employer         : "South China University of Technology"
   uri              : "https://www.scut.edu.cn"
-  email            : "bcliaoyutao@mail.scut.edu.cn" 
+  email            : "bcliaoyutao@mail.scut.edu.cn"
 
   # Academic websites
   academia         : # URL
